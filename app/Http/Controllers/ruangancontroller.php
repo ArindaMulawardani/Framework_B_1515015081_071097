@@ -22,29 +22,29 @@ class ruangancontroller extends Controller
         $ruangan = new ruangan;
         $ruangan->title = $input->title;
         $informasi = $ruangan->save() ? 'Berhasil simpan data' : 'Gagal simpan data';
-        return redirect('ruangan')->width(['informasi'=>$informasi]);
+        return redirect('ruangan')->with(['informasi'=>$informasi]);
     }
     public function edit($id)
     {
         $ruangan = ruangan::find($id);
-        return view('ruangan.edit')->width(array('ruangan'=>$ruangan));
+        return view('ruangan.edit')->with(array('ruangan'=>$ruangan));
     }
     public function lihat($id)
     {
        $ruangan = ruangan::find($id);
-        return view('ruangan.lihat')->width(array('ruangan'=>$ruangan)); 
+        return view('ruangan.lihat')->with(array('ruangan'=>$ruangan)); 
     }
     public function update($id, request $input)
     {
         $ruangan = ruangan::find($id); 
         $ruangan->title = $input->title;
         $informasi = $ruangan->save() ? 'Berhasil update data' : 'Gagal update data';
-        return redirect('ruangan')->width(['informasi'=>$informasi]);
+        return redirect('ruangan')->with(['informasi'=>$informasi]);
     }
     public function hapus($id)
     {
         $ruangan = ruangan::find($id);
         $informasi = $ruangan->delete() ? 'Berhasil hapus data' : 'Gagal hapus data';
-        return redirect('ruangan')->width(['informasi'=>$informasi]);
+        return redirect('ruangan')->with(['informasi'=>$informasi]);
     }
 }

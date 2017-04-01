@@ -10,6 +10,15 @@ use App\mahasiswa;
 
 class mahasiswacontroller extends Controller
 {
+    public function mahasiswa()
+    {
+        // $mahasiswa = mahasiswa::all();
+        // dd($mahasiswa);
+        $mahasiswa = mahasiswa::find(2);
+        echo "Nama : ".$mahasiswa->nama;
+        echo "<br>";
+        echo "Username: ".$mahasiswa->pengguna->username;
+    }
     public function awal()
     {
     	return "Hello dari mahasiswa controller";
@@ -28,4 +37,8 @@ class mahasiswacontroller extends Controller
     	$mahasiswa->save();
     	return "data dengan nama {$mahasiswa->nama} telah disimpan";
     }
+    // public function mahasiswa()
+    // {
+    //     echo "Hello Semua Para Fans Setia";
+    // }
 }
