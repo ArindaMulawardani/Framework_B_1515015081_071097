@@ -18,7 +18,7 @@
 		</thead>
 		<tbody>
 			<?php $x=1;?>
-			@foreach ($semuaDosen_matakuliah as $doskul)
+			@foreach ($semuadosenmatakuliah as $doskul)
 				<tr>
 					<td>{{ $x++ }}</td>
 					<td>{{ $doskul->dosen->nama or 'nama kosong' }}</td>
